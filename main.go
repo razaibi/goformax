@@ -13,8 +13,10 @@ func main() {
 	var rootCmd = &cobra.Command{Use: "mycli"}
 
 	// Add commands to rootCmd
+	rootCmd.AddCommand(cmd.InitCmd)
 	rootCmd.AddCommand(cmd.HelloCmd)
 	rootCmd.AddCommand(cmd.VersionCmd)
+	rootCmd.AddCommand(cmd.GenerateCmd)
 
 	if err := rootCmd.Execute(); err != nil {
 		fmt.Println(err)
